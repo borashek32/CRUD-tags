@@ -4,7 +4,7 @@
 
 @section('content')
     <div style="margin-top: 50px">
-        <h1>Posts</h1>
+        <h1>Posts by tag #{{ $tag->name }}</h1>
     </div>
 
     <a href="{{ route('posts.create') }}">
@@ -46,16 +46,13 @@
                                 </a>
                             </div>
                             <div class="col-md-4">
-                                <form action="{{ route('posts.destroy', $post['id']) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input class="btn btn-danger" type="submit" value="Delete">
-                                </form>
+                                <a href="#">
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </a>
                             </div>
                         </div>
-
-
-
                     </td>
                 </tr>
             @endforeach

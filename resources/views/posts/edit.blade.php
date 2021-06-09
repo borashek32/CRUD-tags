@@ -7,5 +7,8 @@
         <h1>Edit</h1>
     </div>
 
-    @include('posts._form')
+    <form action="{{ route('posts.update', $post) }}" method="POST">
+        @method('PUT')
+        @include('posts._form')
+    </form>
 @endsection

@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', \App\Http\Controllers\PostController::class)->names('posts');
+Route::resource('/posts', \App\Http\Controllers\PostController::class)->names('posts');
+Route::get('/posts-by-tag/{slug}', [\App\Http\Controllers\PostController::class, 'postsByTags'])->name('posts-by-tags');

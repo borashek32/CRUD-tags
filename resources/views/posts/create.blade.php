@@ -7,6 +7,11 @@
         <h1>Create</h1>
     </div>
 
-    @include('posts._form')
+    <form action="{{ route('posts.store') }}" method="POST">
+        @include('posts._form', [
+            'post' => new \App\Models\Post(),
+            'tags' => ''
+        ])
+    </form>
 @endsection
 
